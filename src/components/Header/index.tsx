@@ -4,17 +4,7 @@ import { withTranslation, TFunction } from "react-i18next";
 import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
 import { Button } from "../../common/Button";
-import {
-  HeaderSection,
-  LogoContainer,
-  Burger,
-  NotHidden,
-  Menu,
-  CustomNavLinkSmall,
-  Label,
-  Outline,
-  Span,
-} from "./styles";
+import { HeaderSection, LogoContainer, Burger, NotHidden, Menu, CustomNavLinkSmall, Label, Outline, Span } from "./styles";
 
 const Header = ({ t }: { t: TFunction }) => {
   const [visible, setVisibility] = useState(false);
@@ -34,20 +24,17 @@ const Header = ({ t }: { t: TFunction }) => {
     return (
       <>
         <CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <Span>{t("About")}</Span>
+          <Span>{t("소개")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Mission")}</Span>
+          <Span>{t("프로젝트")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Product")}</Span>
+          <Span>{t("미디어")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall
-          style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
-        >
+        <CustomNavLinkSmall style={{ width: "180px" }} onClick={() => scrollTo("contact")}>
           <Span>
-            <Button>{t("Contact")}</Button>
+            <Button>{t("연락처")}</Button>
           </Span>
         </CustomNavLinkSmall>
       </>
