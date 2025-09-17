@@ -15,8 +15,6 @@ const Home = () => {
       <ScrollToTop />
       <About />
       <CEO id="ceo" />
-
-      <Contact title={ContactContent.title} content={ContactContent.text} id="contact" />
     </Container>
   );
 };

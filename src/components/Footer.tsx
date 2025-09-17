@@ -64,7 +64,7 @@ const CopyrightText = styled.p`
 
 const Footer = () => {
   return (
-    <FooterSection>
+    <FooterSection id="footer">
       <ContentContainer>
         <Row gutter={[32, 32]} justify="start">
           {/* Company Info */}
