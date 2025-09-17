@@ -32,8 +32,8 @@ const FooterTitle = styled.h4`
     left: 0;
     width: 100%; /* Set width to 100% of the parent (the text) */
     height: 3px;
-    background-color: #3498db;
-  }ㄹ
+    background-color: #18216d;
+  }
 `;
 
 const InfoText = styled.p`

@@ -17,10 +17,20 @@ const Section = styled.section`
 // 섹션 제목
 const SectionTitle = styled.h1`
   padding-top: 80px;
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   color: #2c3e50;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%; /* Set width to 100% of the parent (the text) */
+    height: 3px;
+    background-color: #2c3e50;
+  }
 `;
 
 // 그리드 컨테이너 (반응형 레이아웃)
@@ -75,7 +85,7 @@ interface CEOProps {
 
 const CEO = ({ id }: CEOProps) => (
   <Section id={id}>
-    <SectionTitle>대표자:</SectionTitle>
+    <SectionTitle>도형석 소장</SectionTitle>
 
     <GridContainer>
       <Card>

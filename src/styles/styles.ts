@@ -85,10 +85,10 @@ export const Styles = createGlobalStyle`
     a {
         text-decoration: none;
         outline: none;
-        color: #2E186A;
+        color: #18216d;
 
         :hover {
-            color: #2e186a;
+            color: #18216d;
         }
     }
     

@@ -69,7 +69,7 @@ const CardList = styled.ul`
 const About = () => (
   <AboutSection>
     <IntroContainer>
-      <h1 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "0.5rem", color: "#2c3e50" }}> 건축사사무소</h1>
+      <h1 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "0.5rem", color: "#2c3e50" }}> 바로 건축사사무소</h1>
       <p style={{ fontSize: "1.2rem", color: "#555", marginBottom: "1rem" }}>Since 2001</p>
       <p style={{ fontSize: "1.2rem", color: "#555", lineHeight: "1.6" }}>항상 선한 인간과 모든 자연을 깊이 사랑하는 마음으로 주어진 일을 합니다.</p>
     </IntroContainer>
