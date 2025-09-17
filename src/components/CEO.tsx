@@ -71,7 +71,7 @@ const CardList = styled.ul`
 
 const CEO = () => (
   <Section>
-    <SectionTitle>대표자: 도형석</SectionTitle>
+    <SectionTitle>대표자:</SectionTitle>
 
     <GridContainer>
       <Card>

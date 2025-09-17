@@ -5,14 +5,13 @@ import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
 import { Button } from "../../common/Button";
 import { HeaderSection, LogoContainer, Burger, NotHidden, Menu, CustomNavLinkSmall, Label, Outline, Span } from "./styles";
-
+import { useHistory } from "react-router-dom";
 const Header = ({ t }: { t: TFunction }) => {
   const [visible, setVisibility] = useState(false);
-
+  const history = useHistory();
   const toggleButton = () => {
     setVisibility(!visible);
   };
-
   const MenuItem = () => {
     const scrollTo = (id: string) => {
       const element = document.getElementById(id) as HTMLDivElement;
@@ -21,12 +20,25 @@ const Header = ({ t }: { t: TFunction }) => {
       });
       setVisibility(false);
     };
+    const navigateToHome = () => {
+      history.push("/");
+      setVisibility(false);
+    };
+
+    const navigateToProject = () => {
+      history.push("/project");
+      setVisibility(false);
+    };
+
     return (
       <>
-        <CustomNavLinkSmall onClick={() => scrollTo("about")}>
+        <CustomNavLinkSmall onClick={navigateToHome}>
           <Span>{t("소개")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
+        <CustomNavLinkSmall onClick={() => scrollTo("ceo")}>
+          <Span>{t("대표자")}</Span>
+        </CustomNavLinkSmall>
+        <CustomNavLinkSmall onClick={navigateToProject}>
           <Span>{t("프로젝트")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("product")}>
