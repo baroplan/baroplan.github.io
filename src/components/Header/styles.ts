@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import { MenuOutlined } from "@ant-design/icons";
 
 export const HeaderSection = styled("header")`
+  position: fixed; // Added to fix the header to the viewport
+  width: 100%; // Ensures the header spans the full width
+  z-index: 1000; // Keeps the header on top of other content
+  background-color: white; // Optional: adds a background color
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Optional: adds a subtle shadow
   padding: 1rem 0.5rem;
 
   .ant-row-space-between {

@@ -16,6 +16,7 @@ const Section = styled.section`
 
 // 섹션 제목
 const SectionTitle = styled.h1`
+  padding-top: 80px;
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 2rem;

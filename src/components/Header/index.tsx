@@ -60,7 +60,7 @@ const Header = ({ t }: { t: TFunction }) => {
     };
 
     const navigateToProject = () => {
-      history.push("/project");
+      history.push("/projects");
       setVisibility(false);
     };
 
@@ -78,10 +78,8 @@ const Header = ({ t }: { t: TFunction }) => {
         <CustomNavLinkSmall onClick={() => scrollTo("product")}>
           <Span>{t("미디어")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall style={{ width: "180px" }} onClick={() => scrollTo("contact")}>
-          <Span>
-            <Button>{t("연락처")}</Button>
-          </Span>
+        <CustomNavLinkSmall onClick={() => scrollTo("footer")}>
+          <Span>{t("연락처")}</Span>
         </CustomNavLinkSmall>
       </>
     );
