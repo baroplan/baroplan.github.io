@@ -5,21 +5,55 @@ import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
 import { Button } from "../../common/Button";
 import { HeaderSection, LogoContainer, Burger, NotHidden, Menu, CustomNavLinkSmall, Label, Outline, Span } from "./styles";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
 const Header = ({ t }: { t: TFunction }) => {
   const [visible, setVisibility] = useState(false);
+  const [pendingScroll, setPendingScroll] = useState<string | null>(null);
   const history = useHistory();
+  const location = useLocation();
+
   const toggleButton = () => {
     setVisibility(!visible);
   };
+
+  useEffect(() => {
+    if (location.pathname === "/" && pendingScroll) {
+      const timer = setTimeout(() => {
+        const element = document.getElementById(pendingScroll);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+          });
+          setPendingScroll(null);
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname, pendingScroll]);
   const MenuItem = () => {
     const scrollTo = (id: string) => {
-      const element = document.getElementById(id) as HTMLDivElement;
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
       setVisibility(false);
+
+      // 현재 홈페이지에 있는 경우 바로 스크롤
+      if (location.pathname === "/") {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+          });
+        } else {
+          console.warn(`Element with id '${id}' not found`);
+        }
+      } else {
+        // 다른 페이지에 있는 경우 홈으로 이동 후 스크롤 예약
+        setPendingScroll(id);
+        history.push("/");
+      }
     };
+
     const navigateToHome = () => {
       history.push("/");
       setVisibility(false);

@@ -68,9 +68,12 @@ const CardList = styled.ul`
   color: #555;
   line-height: 2;
 `;
+interface CEOProps {
+  id?: string;
+}
 
-const CEO = () => (
-  <Section>
+const CEO = ({ id }: CEOProps) => (
+  <Section id={id}>
     <SectionTitle>대표자:</SectionTitle>
 
     <GridContainer>
